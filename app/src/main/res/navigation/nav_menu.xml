@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_menu"
+    app:startDestination="@id/navigation">
+
+    <fragment
+        android:id="@+id/viewData"
+        android:name="com.codejunior.coinkrest.ViewData"
+        android:label="fragment_view_data"
+        tools:layout="@layout/fragment_view_data" >
+        <action
+            android:id="@+id/action_viewData_to_mainActivity"
+            app:destination="@id/navigation" />
+    </fragment>
+
+    <navigation android:id="@+id/navigation"
+        app:startDestination="@id/mainActivity">
+        <activity
+            android:id="@+id/mainActivity"
+            android:name="com.codejunior.coinkrest.MainActivity"
+            android:label="MainActivity"
+            tools:layout="@layout/activity_main"/>
+        <action
+            android:id="@+id/action_global_viewData"
+            app:destination="@id/viewData" />
+    </navigation>
+</navigation>
